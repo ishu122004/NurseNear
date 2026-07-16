@@ -30,10 +30,10 @@
     
 
     <ul class="gap-6 hidden md:flex" style="font-family: 'Inter', sans-serif;">
-        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Home</li>
-        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Nearby Nurses</li>
+        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./profile.html">Home</a></li>
+        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./search.html">Nearby Nurses</a></li>
         <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Appointments</li>
-        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"> Helpline</li>
+        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="#" onclick="moveToBottom()">Helpline</a></li>
     </ul>
 
     <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" 
@@ -98,7 +98,7 @@
         <p class="m-2"><span class="font-semibold">Experience:</span><span class="pl-1">2 years</span></p>
         <p class="m-2"><span class="font-semibold">Availability:</span><span class="pl-1 text-blue-600">Weekly</span></p>
         <p class="m-2"><span class="font-semibold">Gender:</span><span class="pl-1">Female</span></p>
-               <p class="m-2"><span class="font-semibold">Language:</span><span class="pl-1 ">Eng/Tam</span></p>
+        <p class="m-2"><span class="font-semibold">Language:</span><span class="pl-1 ">Eng/Tam</span></p>
         <p class="m-2"><span class="font-semibold">Distance:</span><span class="pl-1 ">Within 15km</span></p>
 
         <button class="p-2 bg-blue-600 rounded-xl text-white m-2 font-semibold">Book now!</button>
@@ -163,12 +163,25 @@
 </div>
 
 </div>
-
-<!-- Footer section  -->
-<footer class="footer p-2 m-2 sticky bottom-0-0 z-50">
+<!-- Review section  -->
+ <div class="review-scroll flex flex-nowrap m-3 gap-7 w-full overflow-x-auto">
+    <div class="min-w-[300px] p-5 shadow-md flex flex-col"><p class="content center">The booking process was quick and simple. The nurse was professional, caring, and arrived on time. Highly recommended</p><h1 class="text-blue-600 font-semibold mt-auto">Priya S</h1></div>
+    <div class="min-w-[300px] p-5 shadow-md flex flex-col"><p class="content-center">Excellent service! The nurse provided outstanding care for my father during his recovery. Very satisfied.</p><h1 class="text-blue-600 font-semibold mt-auto">Rahul K</h1></div>
+    <div class="min-w-[300px] p-5 shadow-md flex flex-col"><p class="content-center">Friendly and experienced staff. The entire experience was smooth, and customer support was very helpful.</p><h1 class="text-blue-600 font-semibold mt-auto">Anita M</h1></div>
+    <div class="min-w-[300px] p-5 shadow-md flex flex-col"><p class="content-center">Reliable healthcare service with qualified nurses. I will definitely use this platform again.</p><h1 class="text-blue-600 font-semibold mt-auto">Arun V</h1></div>
+    <div class="min-w-[300px] p-5 shadow-md flex flex-col"><p class="content-center">Finding a home nurse was easy. The caregiver was compassionate, skilled, and punctual.</p><h1 class="text-blue-600 font-semibold mt-auto">Rahul J</h1></div>
+    <div class="min-w-[300px] p-5 shadow-md flex flex-col"><p class="content-center">Great experience from booking to service. The nurse explained everything clearly and provided excellent care.</p><h1 class="text-blue-600 font-semibold mt-auto">Shreya A</h1></div>
+ </div>
+ <!-- help line section  -->
+  <div id="bottom-helpline" class="w-full flex flex-col gap-2 justify-center items-center">
+    <h1 class="font-bold text-3xl text-red-500">Helpline</h1>
+    <p>+91 1800 652 7895</p>
+  </div>
+<!--footer section  -->
+<footer class="footer p-2 m-2 sticky bottom-0 bg-white z-50">
     <div class="footer-container">
         <div class="row flex flex-wrap justify-between">
-            <div class="footer-col w-[25%] p-2">
+       <div class="footer-col w-[25%] p-2">
                 <h4 class="relative capitalize mb-3 text-blue-600
                 before:content-['']
                 before:absolute
@@ -238,6 +251,21 @@
         </div>
     </div>
 </footer>
+<style>
+    .review-scroll::-webkit-scrollbar{
+        display: none;
+    }
+</style>
+<script>
+    const helpline=document.getElementById("nav-helpline")
+    function moveToBottom(){
+        document.getElementById("bottom-helpline").scrollIntoView({
+            behavior:"smooth"
+        })
+    }
+
+</script>
+
 
 </body>
 </html>
