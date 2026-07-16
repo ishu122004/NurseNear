@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./src/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
-    <nav class="p-3 flex justify-between items-center bg-white shadow-sm sticky top-0 z-50">
-    <div class="p-4">
+
+<nav class="p-3 flex justify-between items-center bg-white shadow-sm sticky top-0 z-50">
+    <div class="p-3">
     <a href="index.html" class="inline-block">
         <div class="flex items-center">
-            <h1 class="cursor-pointer font-bold text-4xl text-blue-600 leading-none" style="font-family: 'Poppins', sans-serif;">
-                NurseNear
+            <h1 class="cursor-pointer font-bold text-5xl text-blue-600 leading-none md:text-7xl" style="font-family: 'Poppins', sans-serif;">
+                N
             </h1>
-            <p class="text-2xl font-semibold text-blue-600 leading-none" style="font-family: 'Poppins', sans-serif;">
-                userNear
+            <p class="text-3xl font-semibold text-blue-600 leading-none md:text-4xl" style="font-family: 'Poppins', sans-serif;">
+                urseNear
             </p>
         </div>
         <p class="text-sm text-slate-500 mt-1">
@@ -124,7 +127,7 @@
                     class="w-96 border rounded-lg p-3 mb-5 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <br>
                 <button
-                    class="w-96 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
+                    class="w-96 p-2 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
                     Sign Up
                 </button>
 
@@ -160,7 +163,7 @@
                     class="w-96 border rounded-lg p-3 mb-5 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <br>
                 <button
-                    class="w-96 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
+                    class="w-96 p-2 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
                     Sign In
                 </button>
 
@@ -256,7 +259,7 @@
 
     <script>
 
-        const signupForm = document.getElementById("signupForm");
+         const signupForm = document.getElementById("signupForm");
         const signinForm = document.getElementById("signinForm");
 
         document.getElementById("showSignin").addEventListener("click", () => {
@@ -268,6 +271,7 @@
             signinForm.classList.add("hidden");
             signupForm.classList.remove("hidden");
         });
+
 
 
         <!--signup-->
