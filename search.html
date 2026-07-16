@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/output.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <title>NurseNear</title>
+</head>
+<body class="bg-slate-100 overflow-x-hidden">
+    <!-- responsive navbar -->
+
+
+<nav class="p-3 flex justify-between items-center bg-white shadow-sm sticky top-0 z-50">
+    <div class="p-3">
+    <a href="index.html" class="inline-block">
+        <div class="flex items-center">
+            <h1 class="cursor-pointer font-bold text-5xl text-blue-600 leading-none md:text-7xl" style="font-family: 'Poppins', sans-serif;">
+                N
+            </h1>
+            <p class="text-3xl font-semibold text-blue-600 leading-none md:text-4xl" style="font-family: 'Poppins', sans-serif;">
+                urseNear
+            </p>
+        </div>
+        <p class="text-sm text-slate-500 mt-1">
+            Care That Comes to You
+        </p>
+    </a>
+</div>
+    
+
+    <ul class="gap-6 hidden md:flex" style="font-family: 'Inter', sans-serif;">
+        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Home</li>
+        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Nearby Nurses</li>
+        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Appointments</li>
+        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Helpline</li>
+    </ul>
+
+    <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" 
+         xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="28" height="28" 
+         class="md:hidden text-slate-700 cursor-pointer">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+    </svg>
+</nav>
+<!-- filters and results -->
+<section class="max-w-7xl mx-auto">
+    <h1 class="text-center text-3xl font-semibold p-5">Your Health, Your Choice</h1>
+<div class="flex flex-col md:flex-row items-start gap-6 p-6">        
+        <aside class="w-full md:w-1/4">
+            <div class="mt-4">
+            <h1 class="text-xl font-bold mb-4 text-slate-800">Search by Filter</h1>
+            <h3 class="font-semibold mb-2">Specialty</h3>
+           <div class="grid grid-cols-2 md:grid-cols-1 gap-x-4">
+    <label class="flex items-center gap-2 text-slate-600">
+        <input type="checkbox" value="General Care" data-category="specialty" class="filter-checkbox accent-blue-600">
+        <span>General Care</span>
+    </label>
+    <label class="flex items-center gap-2 text-slate-600">
+        <input type="checkbox" value="Elderly Care" data-category="specialty" class="filter-checkbox accent-blue-600">
+        <span>Elderly Care</span>
+    </label>
+
+                <label class="flex items-center gap-2 text-slate-600">
+        <input type="checkbox" value="Pediatric Care" data-category="specialty" class="filter-checkbox accent-blue-600">
+        <span>Pediatric Care</span>
+    </label>
+                <label class="flex items-center gap-2 text-slate-600">
+    <input type="checkbox" value="Wound Care" data-category="specialty" class="filter-checkbox accent-blue-600">
+    <span>Wound Care</span>
+</label>
+                <label class="flex items-center gap-2 text-slate-600">
+        <input type="checkbox" value="Maternity & Newborn Care" data-category="specialty" class="filter-checkbox accent-blue-600">
+        <span>Maternity & Newborn Care</span>
+    </label>
+                <label class="flex items-center gap-2 text-slate-600">
+        <input type="checkbox" value="Post-Surgery Care" data-category="specialty" class="filter-checkbox accent-blue-600">
+        <span>Post-Surgery Care</span>
+    </label>
+<label class="flex items-center gap-2 text-slate-600">
+    <input type="checkbox" value="Injection & Medication Administration" data-category="specialty" class="filter-checkbox accent-blue-600">
+    <span>Injection & Medication Administration</span>
+</label>
+            </div>
+            </div>
+
+            <div class="mt-4">
+                <h3 class="font-semibold mb-2">Care Frequency</h3>
+                <div class="grid grid-cols-2 md:grid-cols-1 gap-x-4">
+    <label class="flex items-center gap-2 text-slate-600">
+        <input type="checkbox" value="Daily" data-category="frequency" class="filter-checkbox accent-blue-600">
+        <span>Daily</span>
+    </label>
+    <label class="flex items-center gap-2 text-slate-600">
+        <input type="checkbox" value="Weekly" data-category="frequency" class="filter-checkbox accent-blue-600">
+        <span>Weekly</span>
+    </label>
+                <label class="flex items-center gap-2 text-slate-600">
+        <input type="checkbox" value="Monthly" data-category="frequency" class="filter-checkbox accent-blue-600">
+        <span>Monthly</span>
+    </label>
+            </div>
+            </div>
+
+            <div class="mt-4">
+                <h3 class="font-semibold mb-2">Experience Level</h3>
+                <div class="grid grid-cols-2 md:grid-cols-1 gap-x-4">
+    <label class="flex items-center gap-2 text-slate-600">
+        <input type="checkbox" value="0-2 Years" data-category="experience" class="filter-checkbox accent-blue-600">
+        <span>0-2 Years</span>
+    </label>
+    <label class="flex items-center gap-2 text-slate-600">
+        <input type="checkbox" value="3-5 Years" data-category="experience" class="filter-checkbox accent-blue-600">
+        <span>3-5 Years</span>
+    </label>
+
+                <label class="flex items-center gap-2 text-slate-600">
+        <input type="checkbox" value="5+ Years" data-category="experience" class="filter-checkbox accent-blue-600">
+        <span>5+ Years</span>
+    </label>
+            </div>
+            </div>
+
+            <div class="mt-4">
+                <h3 class="font-semibold mb-2">Gender Preference</h3>
+                 <div class="grid grid-cols-2 md:grid-cols-1 gap-x-4">
+    <label class="flex items-center gap-2 text-slate-600">
+        <input type="checkbox" value="Male" data-category="gender" class="filter-checkbox accent-blue-600">
+        <span>Male</span>
+    </label>
+    <label class="flex items-center gap-2 text-slate-600">
+        <input type="checkbox" value="Female" data-category="gender" class="filter-checkbox accent-blue-600">
+        <span>Female</span>
+    </label>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <h3 class="font-semibold mb-2">Language</h3>
+                 <div class="grid grid-cols-2 md:grid-cols-1 gap-x-4">
+    <label class="flex items-center gap-2 text-slate-600">
+        <input type="checkbox" value="Tamil" data-category="language" class="filter-checkbox accent-blue-600">
+        <span>Tamil</span>
+    </label>
+    <label class="flex items-center gap-2 text-slate-600">
+        <input type="checkbox" value="English" data-category="language" class="filter-checkbox accent-blue-600">
+        <span>English</span>
+    </label>
+    <label class="flex items-center gap-2 text-slate-600">
+    <input id="others" type="checkbox" value="Others" data-category="language" class="filter-checkbox accent-blue-600">
+    <span>Others</span>
+</label>
+
+<input id="othersinp" type="text" placeholder="Please Specify" class="border border-slate-600 rounded-lg p-2 mt-2 w-full text-sm hidden">
+<p id="othersp" class="text-sm text-red-500 mt-1 hidden">Currently Not Available</p>
+            </div>
+            </div>
+
+            <div class="mt-4">
+                <h3 class="font-semibold mb-2">Distance</h3>
+                 <div class="grid grid-cols-2 md:grid-cols-1 gap-x-4">
+    <label class="flex items-center gap-2 text-slate-600">
+        <input type="checkbox" value="0-5 kms" data-category="distance" class="filter-checkbox accent-blue-600">
+        <span>0-5 kms</span>
+    </label>
+    <label class="flex items-center gap-2 text-slate-600">
+        <input type="checkbox" value="0-15kms" data-category="distance" class="filter-checkbox accent-blue-600">
+        <span>0-15 kms</span>
+    </label>
+    <label class="flex items-center gap-2 text-slate-600">
+        <input type="checkbox" value="0-25kms" data-category="distance" class="filter-checkbox accent-blue-600">
+        <span>0-25 kms</span>
+    </label>
+            </div>
+            </div>
+        </aside>
+        <!-- Profile card -->
+<main id="results" class="w-full md:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
+
+</main>
+
+</div>
+ </section>
+ 
+    <script src="search.js"></script>
+</body>
+</html>
