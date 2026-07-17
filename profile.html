@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profiles</title>
     <link rel="stylesheet" href="./src/output.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -30,20 +30,59 @@
     
 
     <ul class="gap-6 hidden md:flex" style="font-family: 'Inter', sans-serif;">
+<<<<<<< HEAD
         <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./index.html">Home</a></li>
         <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./profile.html">Nearby Nurses</a></li>
         <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./search.html">Search by filter</a></li>
 
         <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./appointment.html">Appointments</a></li>
         <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="#" onclick="moveToBottom()">Helpline</a></li>
+=======
+        <li>
+<a class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Home</a>
+       <li>
+                <a href="index.html" class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Home</a>
+         </li>
+        <li>
+            <a href="profile.html" class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Nearby Nurses</a>
+         </li>
+        <li>
+            <a class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Appointments</a>
+        </li> 
+        <li>
+            <a class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Helpline</a>
+        </li>
+>>>>>>> 5c82ac6b846d0d61b0228f037342ef850fb2afbd
     </ul>
 
-    <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" 
+    <svg id="menuicon" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" 
          xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="28" height="28" 
          class="md:hidden text-slate-700 cursor-pointer">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
     </svg>
 </nav>
+
+<!-- side nav -->
+  <section id="sidenav" class=" bg-white fixed z-20 top-10 transition-all duration-1000" style="width:50%; height:100vh; right:-50%;">
+        <div class="p-8 text-left">
+            <p id="closenav" class="text-slate-600 cursor-pointer">X</p>
+        </div>
+        <ul class="flex flex-col items-center gap-10 text-gray-500">
+         <li>
+                <a href="index.html" class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Home</a>
+         </li>
+        <li>
+            <a href="profile.html" class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Nearby Nurses</a>
+         </li>
+        <li>
+            <a class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Appointments</a>
+        </li> 
+        <li>
+            <a class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Helpline</a>
+        </li>
+
+        </ul>
+    </section>
 <!-- profile card  -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 bg-slate-100">
 <div class="flex justify-between border-none rounded-xl shadow-md p-4 bg-white container m-2">
@@ -165,6 +204,7 @@
 </div>
 
 </div>
+<<<<<<< HEAD
 <!-- Review section  -->
  <div class="review-scroll flex flex-nowrap m-3 gap-7 w-full overflow-x-auto">
     <div class="min-w-[300px] p-5 shadow-md flex flex-col"><p class="content center">The booking process was quick and simple. The nurse was professional, caring, and arrived on time. Highly recommended</p><h1 class="text-blue-600 font-semibold mt-auto">Priya S</h1></div>
@@ -181,6 +221,11 @@
   </div>
 <!--footer section  -->
 <footer class="footer p-2 m-2 sticky bottom-0 bg-white z-50">
+=======
+
+<!-- Footer section  -->
+<footer class="footer p-2 m-2 bg-white sticky bottom-0-0 z-50">
+>>>>>>> 5c82ac6b846d0d61b0228f037342ef850fb2afbd
     <div class="footer-container">
         <div class="row flex flex-wrap justify-between">
        <div class="footer-col w-[25%] p-2">
@@ -253,6 +298,7 @@
         </div>
     </div>
 </footer>
+<<<<<<< HEAD
 <style>
     .review-scroll::-webkit-scrollbar{
         display: none;
@@ -268,6 +314,23 @@
 
 </script>
 
+=======
+<script>
+    //selecting sideNav and menu icon
+var sidenav = document.getElementById("sidenav")
+var menuicon = document.getElementById("menuicon")
+var closenav = document.getElementById("closenav")
+
+menuicon.addEventListener("click",function(){
+    sidenav.style.right=0
+})
+
+closenav.addEventListener("click",function(){
+    sidenav.style.right="-50%"
+
+})
+</script>
+>>>>>>> 5c82ac6b846d0d61b0228f037342ef850fb2afbd
 
 </body>
 </html>

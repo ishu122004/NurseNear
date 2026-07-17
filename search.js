@@ -151,3 +151,16 @@ others.addEventListener("change",() =>{
 othersinp.addEventListener("input",()=>{
     othersp.style.display = othersinp.value.trim().length >0? "block":"none"
 })
+//selecting sideNav and menu icon
+var sidenav = document.getElementById("sidenav")
+var menuicon = document.getElementById("menuicon")
+var closenav = document.getElementById("closenav")
+
+menuicon.addEventListener("click",function(){
+    sidenav.style.right=0
+})
+
+closenav.addEventListener("click",function(){
+    sidenav.style.right="-50%"
+
+})
