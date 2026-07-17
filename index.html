@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>login</title>
     <link rel="stylesheet" href="./src/output.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
-<body>
+<body class="bg-slate-100">
 
 <nav class="p-3 flex justify-between items-center bg-white shadow-sm sticky top-0 z-50">
     <div class="p-3">
@@ -34,12 +34,24 @@
         <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors" id="signupBtn">Sign up</li>
     </ul>
 
-    <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" 
+    <svg id="indexmenuicon" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" 
          xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="28" height="28" 
          class="md:hidden text-slate-700 cursor-pointer">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
     </svg>
 </nav>
+
+<!-- side nav -->
+  <section id="indexsidenav" class=" bg-white fixed z-20 top-15 transition-all duration-1000" style="width:50%; height:100vh; right:-50%;">
+        <div class="p-8 text-left">
+            <p id="indexclosenav" class="text-slate-600 cursor-pointer">X</p>
+        </div>
+        <ul class="flex flex-col items-center gap-10 text-gray-500">
+         <li id="closenav-login" class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Login</li>
+        <li id="closenav-signin" class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Signup</li>
+        
+        </ul>
+    </section>
 
 
 
@@ -110,24 +122,21 @@
 
             <form class="text-center">
 
-                <input type="text"
+                <input id="signinname" type="text"
                     placeholder="Full Name"
                     class="w-96 border rounded-lg p-3 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <br>
-                <input type="email"
+                <input id="signinmail" type="email"
                     placeholder="Email"
                     class="w-96 border rounded-lg p-3 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <br>
-                <input type="password"
+                <input id="signinpass" type="password"
                     placeholder="Password"
                     class="w-96 border rounded-lg p-3 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <br>
-                <input type="password"
-                    placeholder="Confirm Password"
-                    class="w-96 border rounded-lg p-3 mb-5 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <br>
+            
                 <button
-                    class="w-96 p-2 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
+                    id="signinsubmit" class="w-96 p-2 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
                     Sign Up
                 </button>
 
@@ -144,27 +153,27 @@
         </div>
     </section>    
 
-        <!-- Sign In Form -->
+        <!-- Log In Form -->
     <section id="login">     
         <div id="signinForm" class="hidden">
 
             <h2 class="text-3xl font-bold text-center text-blue-600 mb-6">
-                Sign In
+                Login
             </h2>
 
             <form class="text-center">
 
-                <input type="email"
+                <input id="loginmail" type="email"
                     placeholder="Email"
                     class="w-96 border rounded-lg p-3 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <br>
-                <input type="password"
+                <input id="loginpass" type="password"
                     placeholder="Password"
                     class="w-96 border rounded-lg p-3 mb-5 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <br>
-                <button
-                    class="w-96 p-2 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
-                    Sign In
+                <button id="loginsubmit"
+                    class="w-96 p-2 bg-blue-600 text-white text-2xl py-3 rounded-lg hover:bg-blue-700 transition">
+                    Login
                 </button>
 
             </form>
@@ -182,7 +191,7 @@
     </section>
 
     <!-- Footer section  -->
-<footer class="footer p-2 mt-5 bg-blue-50 sticky bottom-0-0 z-50">
+<footer class="footer p-2 mt-5 bg-white sticky bottom-0-0 z-50">
     <div class="footer-container">
         <div class="row flex flex-wrap justify-between">
             <div class="footer-col w-[25%] p-2">
@@ -299,6 +308,97 @@ bookButtons.forEach((button) => {
     });
 
 });
+
+//signup authentication
+
+var signinname = document.getElementById("signinname")
+var signinmail = document.getElementById("signinmail")
+var signinpass = document.getElementById("signinpass")
+var signinsubmit = document.getElementById("signinsubmit")
+
+var signinnameregex = /^[a-zA-Z]+$/
+var signinmailregex = /^[a-zA-Z0-9]+@gmail\.com$/
+var signinpassregex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+
+signinsubmit.addEventListener("click",(e)=>{
+e.preventDefault()
+
+if(signinnameregex.test(signinname.value) == false){
+    alert("Enter a valid name")
+    return
+}
+if(signinmailregex.test(signinmail.value) == false){
+    alert("Enter a valid email")
+    return
+}
+if(signinnameregex.test(signinname.value) == false){
+    alert("Enter a valid name")
+    return
+}
+
+alert("Signed up successfully !")
+window.location.href = "search.html"
+
+})
+
+//login authentication
+
+var loginmail = document.getElementById("loginmail")
+var loginpass = document.getElementById("loginpass")
+var loginsubmit = document.getElementById("loginsubmit")
+
+var loginmailregex = /^[a-zA-Z0-9]+@gmail\.com$/
+var loginpassregex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+
+loginsubmit.addEventListener("click", (e)=>{
+    e.preventDefault()
+
+    if(loginmailregex.test(loginmail.value) == false){
+        alert("Enter a Valid Mail")
+        return
+    }
+    if(loginpassregex.test(loginpass.value) == false){
+        alert("Enter a Valid Mail")
+        return
+    }
+    alert("Login Successfully")
+    window.location.href = ""
+})
+
+//selecting sideNav and menu icon
+var indexsidenav = document.getElementById("indexsidenav")
+var indexmenuicon = document.getElementById("indexmenuicon")
+var indexclosenav = document.getElementById("indexclosenav")
+
+indexmenuicon.addEventListener("click",function(){
+    indexsidenav.style.right=0
+})
+
+indexclosenav.addEventListener("click",function(){
+    indexsidenav.style.right="-50%"
+
+})
+
+//navigation on sidenav
+var closenavlogin = document.getElementById("closenav-login")
+var closenavsignin = document.getElementById("closenav-signin")
+
+closenavlogin.addEventListener("click",()=>{
+    indexsidenav.style.right= "-50%"
+    signupForm.classList.add("hidden");
+    signinForm.classList.remove("hidden");
+    signup.scrollIntoView({
+        behavior: "smooth"
+    })
+})
+closenavsignin.addEventListener("click",()=>{
+    indexsidenav.style.right= "-50%"
+    signinForm.classList.add("hidden");
+    signupForm.classList.remove("hidden");
+    signup.scrollIntoView({
+        behavior: "smooth"
+    })
+})
 
     </script>
 

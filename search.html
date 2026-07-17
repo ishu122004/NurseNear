@@ -32,18 +32,48 @@
     
 
     <ul class="gap-6 hidden md:flex" style="font-family: 'Inter', sans-serif;">
-        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Home</li>
-        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Nearby Nurses</li>
-        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Appointments</li>
-        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Helpline</li>
+       <li>
+                <a href="index.html" class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Home</a>
+         </li>
+        <li>
+            <a href="profile.html" class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Nearby Nurses</a>
+         </li>
+        <li>
+            <a class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Appointments</a>
+        </li> 
+        <li>
+            <a class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Helpline</a>
+        </li>
     </ul>
 
-    <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" 
+    <svg id="menuicon" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" 
          xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="28" height="28" 
          class="md:hidden text-slate-700 cursor-pointer">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
     </svg>
 </nav>
+
+<!-- side nav -->
+  <section id="sidenav" class=" bg-white fixed z-20 top-50 transition-all duration-1000" style="width:50%; height:100vh; right:-50%;">
+        <div class="p-8 text-left">
+            <p id="closenav" class="text-slate-600 cursor-pointer">X</p>
+        </div>
+        <ul class="flex flex-col items-center gap-10 text-gray-500">
+         <li>
+                <a href="index.html" class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Home</a>
+         </li>
+        <li>
+            <a href="profile.html" class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Nearby Nurses</a>
+         </li>
+        <li>
+            <a class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Appointments</a>
+        </li> 
+        <li>
+            <a class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors">Helpline</a>
+        </li>
+
+        </ul>
+    </section>
 <!-- filters and results -->
 <section class="max-w-7xl mx-auto">
     <h1 class="text-center text-3xl font-semibold p-5">Your Health, Your Choice</h1>
