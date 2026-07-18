@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="p-3 flex justify-between items-center bg-white shadow-sm sticky top-0 z-50">
+        <div class="p-3">
+            <a href="index.html" class="inline-block">
+                <div class="flex items-center">
+                    <h1 class="cursor-pointer font-bold text-5xl text-blue-600 leading-none md:text-7xl"
+                        style="font-family: 'Poppins', sans-serif;">
+                        N
+                    </h1>
+                    <p class="text-2xl font-semibold text-blue-600 leading-none md:text-4xl"
+                        style="font-family: 'Poppins', sans-serif;">
+                        urseNear
+                    </p>
+                </div>
+                <p class="text-sm text-slate-500 mt-1">
+                    Care That Comes to You
+                </p>
+            </a>
+        </div>
+
+
+       <ul class="gap-6 hidden md:flex" style="font-family: 'Inter', sans-serif;">
+        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./main.html">Home</a></li>
+        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./profile.html">Nearby Nurses</a></li>
+        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./appointment.html">Appointments</a></li>
+          <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="#" onclick="moveToBottom()">Helpline</a></li>
+    </ul>
+    </nav>
+
+
+
+    <!--Book part-->
+
+    <div class="m-5 sm:flex sm:justify-around sm:items-center sm:gap-10 sm:m-10">
+
+        <div>
+
+            <div class="text-center">
+                <p class="text-4xl font-bold">Trusted Home Nursing & Elder Care at Your Doorstep</p>
+                <p class="mt-5 mb-5">Nurse At Home Provides Professional, Verified Nurses & Attendants for Complete
+                    Peace of Mind</p>
+                <button class="text-white bg-blue-600 font-semibold p-2"><a href="profile.html">Go to profile</a></button>
+            </div>
+
+        </div>
+
+        <div>
+            <img src="./images/about1.jpg" class="w-xl mt-2 md:flex">
+        </div>
+
+    </div>
+
+    <!--elder about-->
+
+    <div class="mt-5 mb-5 ml-5 mr-5 md:mt-15 md:mb-15 md:ml-30 md:mr-30">
+        <p class="text-2xl md:text-3xl font-medium mb-3">Are you looking for an Elder Care Attendant at Home?</p>
+        <p class="md:text-xl">Welcome to Nurse at Home, the best agency in Tamilnadu! Are you in need of reliable and
+            trustworthy attendant services?
+
+            Look no further, as our experienced and qualified elder care attendants can care for your loved ones' daily
+            needs. At Nurse at Home, we offer nursing and attendant services to suit your needs. Our experienced and
+            reliable attendants are here to make your life easier and give compassionate care to your loved ones right
+            in the comfort of your home. We understand that sometimes you can't take time out of your busy schedule to
+            care for your parents and elders' needs. That's why our attendants are trained to make sure that your loved
+            ones always have reliable support and a compassionate company. We offer flexible scheduling options to fit
+            your exact needs. And with our competitive pricing, you can have the care you need without breaking the
+            bank.
+
+            If you live in Tamilnadu and need reliable attendant and nursing services, look no further than Nurse at
+            Home. Contact us today to learn more about our services.</p>
+
+
+    </div>
+
+
+
+    <!--images-->
+    <div class="flex justify-around gap-3 m-3">
+        <div>
+            <img src="./images/about2.jpg" class="w-70 shadow-xl">
+        </div>
+        <div>
+            <img src="./images/about3.jpg" class="w-70 shadow-xl">
+        </div>
+        <div>
+            <img src="./images/about4.jpg" class="w-70 shadow-xl">
+        </div>
+    </div>
+
+
+    <!--about-->
+
+    <div class="mt-5 mb-5 ml-3 mr-3 md:mt-10 md:mb-10 md:ml-20 md:mr-20">
+        <div class="text-center">
+            <p class="text-3xl font-bold mb-3 md:text-5xl md:font-bold md:mb-5">Your Trusted Home Healthcare Partner</p>
+            <p class="text-2xl font-medium md:text-2xl md:font-medium mb-3">Empowering homes with professional,
+                world-class & affordable home healthcare, because we care for you!</p>
+            <p class="text-xs md:text-xl">Welcome to Nurse Care , a leading provider of comprehensive home healthcare
+                services in Tamilnadu. We understand that home healthcare is a fundamental need of every individual, and
+                we are committed to providing the best possible care to our clients in the comfort of their homes.</p>
+        </div>
+
+    </div>
+
+     <!-- help line section  -->
+  <div id="bottom-helpline" class="w-full m-5 flex flex-col gap-2 justify-center items-center">
+    <h1 class="font-bold text-3xl text-red-500">Helpline</h1>
+    <p>+91 1800 652 7895</p>
+  </div>
+
+
+    <!-- Footer section  -->
+    <footer class="footer p-2 mt-10 bg-blue-50 sticky bottom-0-0 z-50">
+        <div class="footer-container">
+            <div class="row flex flex-wrap justify-between">
+                <div class="footer-col w-[25%] p-2">
+                    <h4 class="relative capitalize mb-3 text-blue-600
+                before:content-['']
+                before:absolute
+                before:left-0
+                before:bottom-[-10px]
+                before:bg-blue-900 
+                before:h-1
+                before:w-[50px]">Company</h4>
+                    <ul>
+                        <li><a href="#"
+                                class="block pl-2 text-[16px] capitalize text-slate-950 transition-all duration-300 ease-in-out hover:text-blue-600 hover:translate-x-2">About</a>
+                        </li>
+                        <li><a href="#"
+                                class="block pl-2 text-[16px] capitalize text-slate-950 transition-all duration-300 ease-in-out hover:text-blue-600 hover:translate-x-2">Our
+                                services</a></li>
+                        <li><a href="#"
+                                class="block pl-2 text-[16px] capitalize text-slate-950 transition-all duration-300 ease-in-out hover:text-blue-600 hover:translate-x-2">Careers</a>
+                        </li>
+                        <li><a href="#"
+                                class="block pl-2 text-[16px] capitalize text-slate-950 transition-all duration-300 ease-in-out hover:text-blue-600 hover:translate-x-2">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col w-[25%] p-2">
+                    <h4 class="relative capitalize mb-3 text-blue-600
+                before:content-['']
+                before:absolute
+                before:left-0
+                before:bottom-[-10px]
+                before:bg-blue-900 
+                before:h-1
+                before:w-[50px]">Services</h4>
+                    <ul>
+                        <li><a href="#"
+                                class="block pl-2 text-[16px] capitalize text-slate-950 transition-all duration-300 ease-in-out hover:text-blue-600 hover:translate-x-2">Home Nursing</a>
+                        </li>
+                        <li><a href="#"
+                                class="block pl-2 text-[16px] capitalize text-slate-950 transition-all duration-300 ease-in-out hover:text-blue-600 hover:translate-x-2">Elder & Wound Care</a></li>
+                        <li><a href="#"
+                                class="block pl-2 text-[16px] capitalize text-slate-950 transition-all duration-300 ease-in-out hover:text-blue-600 hover:translate-x-2">Post-Surgery Care</a>
+                        </li>
+                        <li><a href="#"
+                                class="block pl-2 text-[16px] capitalize text-slate-950 transition-all duration-300 ease-in-out hover:text-blue-600 hover:translate-x-2">Mother & Baby Care</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col w-[25%] p-2">
+                    <h4 class="relative capitalize mb-3 text-blue-600
+                before:content-['']
+                before:absolute
+                before:left-0
+                before:bottom-[-10px]
+                before:bg-blue-900 
+                before:h-1
+                before:w-[50px]">Quick Links</h4>
+                    <ul>
+                        <li><a href="#"
+                                class="block pl-2 text-[16px] capitalize text-slate-950 transition-all duration-300 ease-in-out hover:text-blue-600 hover:translate-x-2">Book Appointment Find a nurse</a>
+                        </li>
+                        <li><a href="#"
+                                class="block pl-2 text-[16px] capitalize text-slate-950 transition-all duration-300 ease-in-out hover:text-blue-600 hover:translate-x-2">Find a Nurse</a></li>
+                        <li><a href="#"
+                                class="block pl-2 text-[16px] capitalize text-slate-950 transition-all duration-300 ease-in-out hover:text-blue-600 hover:translate-x-2">Privacy Policy</a>
+                        </li>
+                        <li><a href="#"
+                                class="block pl-2 text-[16px] capitalize text-slate-950 transition-all duration-300 ease-in-out hover:text-blue-600 hover:translate-x-2">Terms & Conditions</a>
+                        </li>
+                        <li><a href="#" class="block pl-2 text-[16px] capitalize text-slate-950 transition-all duration-300 ease-in-out hover:text-blue-600 hover:translate-x-2">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="relative capitalize mb-7 text-blue-600
+                before:content-['']
+                before:absolute
+                before:left-0
+                before:bottom-[-10px]
+                before:bg-blue-900 
+                before:h-1
+                before:w-[50px]">Follow us</h4>
+
+                    <div class="social-links">
+                        <a href="#"
+                            class="inline-block bg-blue-950 text-white rounded-[50%] h-[40px] w-[40px] mr-2.5 text-center mb-2.5 transition-all duration-1000 ease-in-out hover:bg-blue-200 hover:text-black"><i
+                                class="fab fa-linkedin-in pt-3"></i></a>
+                        <a href="#"
+                            class="inline-block bg-blue-950 text-white rounded-[50%] h-[40px] w-[40px] mr-2.5 text-center mb-2.5 transition-all duration-1000 ease-in-out hover:bg-blue-200 hover:text-black"><i
+                                class="fab fa-instagram pt-3"></i></a>
+                        <a href="#"
+                            class="inline-block bg-blue-950 text-white rounded-[50%] h-[40px] w-[40px] mr-2.5 text-center mb-2.5 transition-all duration-1000 ease-in-out hover:bg-blue-200 hover:text-black"><i
+                                class="fab fa-facebook-f pt-3"></i></a>
+                        <a href="#"
+                            class="inline-block bg-blue-950 text-white rounded-[50%] h-[40px] w-[40px] mr-2.5 text-center mb-2.5 transition-all duration-1000 ease-in-out hover:bg-blue-200 hover:text-black"><i
+                                class="fa-brands fa-github pt-3"></i></a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <script>
+    const helpline=document.getElementById("nav-helpline")
+    function moveToBottom(){
+        document.getElementById("bottom-helpline").scrollIntoView({
+            behavior:"smooth"
+        })
+    }
+
+    </script>
+
+</body>
+
+</html>
