@@ -89,7 +89,7 @@
                                 <p class="m-2"><span class="font-semibold">Distance:</span><span class="pl-1 ">Within 25km</span></p>
 
 
-        <button class="p-2 bg-blue-600 rounded-xl text-white m-2 font-semibold">Book now!</button>
+        <button class="bookbutton p-2 bg-blue-600 rounded-xl text-white m-2 font-semibold">Book now!</button>
         
       </div>
 </div>
@@ -109,7 +109,7 @@
                 <p class="m-2"><span class="font-semibold">Language:</span><span class="pl-1 ">Eng/Tam</span></p>
         <p class="m-2"><span class="font-semibold">Distance:</span><span class="pl-1 ">Within 25km</span></p>
 
-        <button class="p-2 bg-blue-600 rounded-xl text-white m-2 font-semibold">Book now!</button>
+        <button class="bookbutton p-2 bg-blue-600 rounded-xl text-white m-2 font-semibold">Book now!</button>
         
       </div>
 </div>
@@ -129,7 +129,7 @@
         <p class="m-2"><span class="font-semibold">Language:</span><span class="pl-1 ">Eng/Tam</span></p>
         <p class="m-2"><span class="font-semibold">Distance:</span><span class="pl-1 ">Within 15km</span></p>
 
-        <button class="p-2 bg-blue-600 rounded-xl text-white m-2 font-semibold">Book now!</button>
+        <button class="bookbutton p-2 bg-blue-600 rounded-xl text-white m-2 font-semibold">Book now!</button>
       </div>
 </div>
 <div class="flex justify-between border-none rounded-xl shadow-md p-4 bg-white container m-2">
@@ -147,7 +147,7 @@
         <p class="m-2"><span class="font-semibold">Gender:</span><span class="pl-1">Female</span></p>
         <p class="m-2"><span class="font-semibold">Language:</span><span class="pl-1 ">Eng/Tam</span></p>
         <p class="m-2"><span class="font-semibold">Distance:</span><span class="pl-1 ">Within 5km</span></p>
-        <button class="p-2 bg-blue-600 rounded-xl text-white m-2 font-semibold">Book now!</button>
+        <button class="bookbutton p-2 bg-blue-600 rounded-xl text-white m-2 font-semibold">Book now!</button>
         
         
       </div>
@@ -167,7 +167,7 @@
         <p class="m-2"><span class="font-semibold">Gender:</span><span class="pl-1">Female</span></p>
         <p class="m-2"><span class="font-semibold">Language:</span><span class="pl-1 ">Eng/Tam</span></p>
         <p class="m-2"><span class="font-semibold">Distance:</span><span class="pl-1 ">Within 25km</span></p>
-        <button class="p-2 bg-blue-600 rounded-xl text-white m-2 font-semibold">Book now!</button>
+        <button class="bookbutton p-2 bg-blue-600 rounded-xl text-white m-2 font-semibold">Book now!</button>
       </div>
 </div>
 <div class="flex justify-between border-none rounded-xl shadow-md p-4 bg-white container m-2">
@@ -185,7 +185,7 @@
         <p class="m-2"><span class="font-semibold">Gender:</span><span class="pl-1">Male</span></p>
         <p class="m-2"><span class="font-semibold">Language:</span><span class="pl-1 ">Eng/Tam</span></p>
         <p class="m-2"><span class="font-semibold">Distance:</span><span class="pl-1 ">Within 15km</span></p>
-        <button class="p-2 bg-blue-600 rounded-xl text-white m-2 font-semibold">Book now!</button>
+        <button class="bookbutton p-2 bg-blue-600 rounded-xl text-white m-2 font-semibold">Book now!</button>
         
       </div>
 </div>
@@ -315,6 +315,40 @@ menuicon.addEventListener("click",function(){
 closenav.addEventListener("click",function(){
     sidenav.style.right="-50%"
 
+})
+//for understanding of book now button use foreach loop 
+// let bookbuttons=document.querySelectorAll(".bookbutton")
+
+// bookbuttons.forEach(function(button){
+//     button.onclick=function(){
+//         window.location.href="appointment.html"
+//     }
+// })
+
+//use normal function with promise
+// let bookbuttons=document.querySelectorAll(".bookbutton")
+// bookbuttons.forEach(function(button){
+//     button.addEventListener("click",function(){
+//         let bookPromise=await new Promise(function(resolve){
+//             setTimeout(fuction(){
+//             resolve("opening appointment page....")
+//         },1000)
+    // })
+//         bookPromise.then(function(msg){
+//             window.location.href="appointment.html"
+//         })
+//     })
+// })
+
+let bookbuttons=document.querySelectorAll(".bookbutton")   //get all buttons
+bookbuttons.forEach(function(button){           //loop through each button
+    button.addEventListener("click",async function() {
+        let msg=await new Promise(function(resolve){   //await pauses the function until the promisee resolves
+            resolve("Opening appointment page..")
+        })
+        console.log(msg);
+        window.location.href="appointment.html"
+    })
 })
 </script>
 

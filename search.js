@@ -1,5 +1,5 @@
 // ---------- Nurse Data (stand-in for what a real backend would return) ----------
-const nursesData = [
+const nursesData = [         //object stores nurse details   this is like small database
   { id: "NR001", name: "Sara", img: "./images/nurse1.jpg", specialty: "General Care", experience: 2, frequency: "Weekly", gender: "Female", language: ["English"], distance: "Within 5km" },
   { id: "NR002", name: "Davis", img: "./images/nurse1.jpg", specialty: "Wound Care", experience: 3, frequency: "Monthly", gender: "Male", language: ["English", "Tamil"], distance: "Within 25km" },
   { id: "NR003", name: "Olivia", img: "./images/nurse1.jpg", specialty: "Pediatric Care", experience: 2, frequency: "Weekly", gender: "Female", language: ["English", "Tamil"], distance: "Within 15km" },
@@ -9,10 +9,10 @@ const nursesData = [
 ];
 
 // ---------- Simulate an API call: wrap setTimeout in a Promise ----------
-function fetchNurses() {
+function fetchNurses() {        //promise created
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (nursesData && nursesData.length > 0) {
+      if (nursesData && nursesData.length > 0) {     //it checks nurse data is available or not
         resolve(nursesData);
       } else {
         reject(new Error("No nurse data found"));
@@ -23,7 +23,7 @@ function fetchNurses() {
 
 // ---------- DOM references ----------
 const resultsContainer = document.getElementById("results");
-const filterCheckboxes = document.querySelectorAll(".filter-checkbox");
+const filterCheckboxes = document.querySelectorAll(".filter-checkbox");  //this is for appear every checkbox
 
 // ---------- Turn a number of years into the matching range label ----------
 function getExperienceRange(years) {
@@ -33,7 +33,7 @@ function getExperienceRange(years) {
 }
 
 // ---------- Build one card's HTML ----------
-function createNurseCard(nurse) {
+function createNurseCard(nurse) {     //function creates one html card
   return `
     <div class="flex flex-col border-none rounded-xl shadow-md p-4 bg-white h-full">
       <div class="flex justify-center mb-2">
@@ -49,27 +49,28 @@ function createNurseCard(nurse) {
         <p class="mb-1"><span class="font-semibold">Language:</span><span class="pl-1">${nurse.language.join("/")}</span></p>
         <p class="mb-1"><span class="font-semibold">Distance:</span><span class="pl-1">${nurse.distance}</span></p>
       </div>
-      <button class="p-2 bg-blue-600 rounded-xl text-white mt-3 font-semibold hover:bg-blue-700 transition-colors">Book now!</button>
+      <button class="bookbutton p-2 bg-blue-600 rounded-xl text-white mt-3 font-semibold hover:bg-blue-700 transition-colors">Book now!</button>
     </div>
   `;
 }
 
 // ---------- Render nurse cards into the results section ----------
-function renderNurses(nurseList) {
+function renderNurses(nurseList) {      //display all nurse cards
   if (nurseList.length === 0) {
     resultsContainer.innerHTML = `<p class="text-center text-slate-500 col-span-full p-6">No nurses match your filters.</p>`;
     return;
   }
-  resultsContainer.innerHTML = nurseList.map(createNurseCard).join("");
+  resultsContainer.innerHTML = nurseList.map(createNurseCard).join("");       //add the nurse card if the filter matches
+  addbookbtnEvents()     //Add events after cards are created
 }
 
 // ---------- Loading state while "fetching" ----------
 function showLoading() {
-  resultsContainer.innerHTML = `<p class="text-center text-slate-500 col-span-full p-6">Loading nurses...</p>`;
+  resultsContainer.innerHTML = `<p class="text-center text-slate-500 col-span-full p-6">Loading nurses...</p>`;      //before showing nursecard in filter page this text will be appear
 }
 
 // ---------- Collect checked filters, grouped by category using a Map + Set ----------
-function getActiveFilters() {
+function getActiveFilters() {      //it idendifies which checkbox is selected
   const filters = new Map(); // category -> Set of checked values
 
   filterCheckboxes.forEach((checkbox) => {
@@ -88,7 +89,7 @@ function getActiveFilters() {
 }
 
 // ---------- Filter the nurse list based on active filters ----------
-function applyFilters(nurses, filters) {
+function applyFilters(nurses, filters) {      //checks every nurse
   return nurses.filter((nurse) => {
     for (const [category, values] of filters) {
       if (values.size === 0) continue;
@@ -120,12 +121,12 @@ function applyFilters(nurses, filters) {
 
 // ---------- Main flow: fetch -> filter -> render (async/await + try/catch) ----------
 async function loadAndDisplayNurses() {
-  showLoading();
+  showLoading();      //first loading shows
   try {
-    const allNurses = await fetchNurses();
-    const activeFilters = getActiveFilters();
+    const allNurses = await fetchNurses();    //wait until promise finishes.it continues only after promise finishes
+    const activeFilters = getActiveFilters();      //get select filters
     const filteredNurses = applyFilters(allNurses, activeFilters);
-    renderNurses(filteredNurses);
+    renderNurses(filteredNurses);      //displays the cards
   } catch (error) {
     resultsContainer.innerHTML = `<p class="text-center text-red-500 col-span-full p-6">Something went wrong: ${error.message}</p>`;
   }
@@ -137,7 +138,7 @@ filterCheckboxes.forEach((checkbox) => {
 });
 
 // ---------- Load nurses when the page first opens ----------
-document.addEventListener("DOMContentLoaded", loadAndDisplayNurses);
+document.addEventListener("DOMContentLoaded", loadAndDisplayNurses);    //automatically display all nurses when page finishes loading
 
 // ------------others error----------------
 var others = document.getElementById("others")
@@ -164,3 +165,22 @@ closenav.addEventListener("click",function(){
     sidenav.style.right="-50%"
 
 })
+
+
+//create promise for bookbutton
+
+function delay(ms){
+  return new Promise(function(resolve){
+    setTimeout(resolve,ms)
+  })
+}
+
+function addbookbtnEvents(){
+  let bookbuttons=document.querySelectorAll(".bookbutton")
+  bookbuttons.forEach(function(button){
+    button.addEventListener("click",async function(){
+      await delay(1000);  //wait 1 sec
+      window.location.href="appointment.html"
+    })
+  })
+}
