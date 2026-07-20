@@ -35,46 +35,99 @@
         <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./index.html">Logout</a></li>
     </ul>
 
-    <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24"
+    <svg id="menuicon" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24"
          xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="28" height="28"
          class="md:hidden text-slate-700 cursor-pointer">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
     </svg>
 </nav>
 
-<!-- appointment form section  -->
-    <div id="form" class="p-4">
-        <h1 class="flex justify-center m-5 text-4xl font-bold text-blue-600">Information to fill for appointment</h1>
-        <form class="grid grid-cols-1 justify-center items-center">
-        <div class="flex flex-col justify-center items-center gap-3">
-            <div class="flex gap-2 items-center mb-3"><label for="patient-name" class="text-blue-600 w-52 font-bold">Patient Name:</label><input type="text" id="patient-name" class="border border-gray-300 rounded-md w-80 h-10 pl-1" placeholder="Enter patient name"></div>
-            <div class="flex gap-2"><label for="patient-age" class="text-blue-600 w-52 font-bold">Age:</label><input type="text" id="patient-age" class="border border-gray-300 w-80 rounded-md h-10 pl-1" placeholder="Enter age"></div>
-            <div class="flex gap-2"><label class="text-blue-600 w-52 font-bold">Gender:</label><div class="w-40 flex"><input type="radio" name="gender" id="gender-female" value="female"><label for="gender-female" class="pl-1">Female</label></div><div class="w-40 flex"><input type="radio" name="gender" id="gender-male" value="male"><label for="gender-male" class="pl-1">Male</label></div></div>
-            <div class="flex gap-2"><label for="number" class="text-blue-600 w-52 font-bold">Phone Number:</label><input type="tel" inputmode="numeric" maxlength="10" id="number" class="w-80 border border-gray-300 rounded-md h-10 pl-1" placeholder="Enter your number"></div>
-            <div class="flex gap-2"><label for="address" class="text-blue-600 w-52 font-bold">Home Address:</label><input type="text" id="address" class="w-80 border border-gray-300 rounded-md h-10 pl-1" placeholder="Enter address here."></div>
-            <div class="flex gap-2"><label for="reasonmsg" class="text-blue-600 w-52 font-bold">Reason for care:</label><textarea id="reasonmsg" class="w-80 h-40 border border-gray-300 rounded-md pl-1" placeholder="Type medical information.."></textarea></div>
-            <div class="flex gap-2"><label for="speciality" class="text-blue-600 w-52 font-bold">Preferred nurse speciality:</label>
-            <select id="speciality" class="border border-gray-300 rounded-md p-2 bg-white appearance-none w-80">
-                <option>General Care</option>
-                <option>Elderly Care</option>
-                <option>Pediatric Care</option>
-                <option>Wound Care</option>
-                <option>Maternity & Newborn Care</option>
-                <option>Post-Surgery Care</option>
-                <option>Injection & Medication Administration</option>
-            </select>
-            </div>
-            <div class="flex gap-2"><label for="date" class="text-blue-600 w-52 font-bold">Date of Appointment:</label><input type="date" id="date" class="border border-gray-300 pl-1 rounded-md w-80 h-10"></div>
-
-            <div class="flex gap-2"><label for="duration" class="text-blue-600 w-52 font-bold">Duration of Care:</label>
-            <select id="duration" class="border border-gray-300 rounded-md p-2 w-80 bg-white appearance-none">
-                <option value="daily">Daily</option>
-                <option value="weekly">Weekly</option>
-                <option value="monthly">Monthly</option>
-            </select></div>
+<!-- side nav -->
+  <section id="sidenav" class=" bg-white fixed z-20 top-25 transition-all duration-1000" style="width:50%; height:100vh; right:-50%;">
+        <div class="p-8 text-left">
+            <p id="closenav" class="text-slate-600 cursor-pointer">X</p>
         </div>
-        <div class="flex justify-center items-center p-5 mt-5">
-        <button id="bookbutton" type="submit" class="bg-blue-600 w-80 content-center text-white rounded-md font-bold text-xl p-3 transition-all duration-700 ease-linear hover:bg-blue-200 hover:text-blue-950">Book Appointment Now!</button></div>
+        <ul class="flex flex-col items-center gap-10 text-gray-500">
+         <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./main.html">Home</a></li>
+        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./profile.html">Nearby Nurses</a></li>
+        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./index.html">Logout</a></li>
+
+
+        </ul>
+    </section>
+
+<!-- appointment form section  -->
+   <div id="form" class="p-4 sm:p-6">
+        <h1 class="flex justify-center m-5 text-2xl sm:text-4xl font-bold text-blue-600 text-center">Information to fill for appointment</h1>
+
+        <form class="w-full max-w-2xl mx-auto bg-white rounded-xl shadow-sm border border-gray-200 p-6 sm:p-8">
+        <div class="flex flex-col gap-4 items-center md:items-start">
+
+            <div class="grid grid-cols-1 md:grid-cols-[140px_auto] gap-1 md:gap-4 md:items-center w-full justify-items-center md:justify-items-start">
+                <label for="patient-name" class="text-blue-600 font-bold">Patient Name:</label>
+                <input type="text" id="patient-name" class="border border-gray-300 rounded-md w-96 h-10 px-3" placeholder="Enter patient name">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-[140px_auto] gap-1 md:gap-4 md:items-center w-full justify-items-center md:justify-items-start">
+                <label for="patient-age" class="text-blue-600 font-bold">Age:</label>
+                <input type="text" id="patient-age" class="border border-gray-300 rounded-md w-96 h-10 px-3" placeholder="Enter age">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-[140px_auto] gap-1 md:gap-4 md:items-center w-full justify-items-center md:justify-items-start">
+                <label class="text-blue-600 font-bold">Gender:</label>
+                <div class="flex gap-6">
+                    <div class="flex items-center gap-1"><input type="radio" name="gender" id="gender-female" value="female"><label for="gender-female" class="pl-1">Female</label></div>
+                    <div class="flex items-center gap-1"><input type="radio" name="gender" id="gender-male" value="male"><label for="gender-male" class="pl-1">Male</label></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-[140px_auto] gap-1 md:gap-4 md:items-center w-full justify-items-center md:justify-items-start">
+                <label for="number" class="text-blue-600 font-bold">Phone Number:</label>
+                <input type="tel" inputmode="numeric" maxlength="10" id="number" class="border border-gray-300 rounded-md w-96 h-10 px-3" placeholder="Enter your number">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-[140px_auto] gap-1 md:gap-4 md:items-center w-full justify-items-center md:justify-items-start">
+                <label for="address" class="text-blue-600 font-bold">Home Address:</label>
+                <input type="text" id="address" class="border border-gray-300 rounded-md w-96 h-10 px-3" placeholder="Enter address here.">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-[140px_auto] gap-1 md:gap-4 w-full justify-items-center md:justify-items-start">
+                <label for="reasonmsg" class="text-blue-600 font-bold">Reason for care:</label>
+                <textarea id="reasonmsg" class="border border-gray-300 rounded-md w-96 h-24 px-3 py-2" placeholder="Type medical information.."></textarea>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-[140px_auto] gap-1 md:gap-4 md:items-center w-full justify-items-center md:justify-items-start">
+                <label for="speciality" class="text-blue-600 font-bold">Speciality:</label>
+                <select id="speciality" class="border border-gray-300 rounded-md p-2 bg-white appearance-none w-96 h-10">
+                    <option>General Care</option>
+                    <option>Elderly Care</option>
+                    <option>Pediatric Care</option>
+                    <option>Wound Care</option>
+                    <option>Maternity & Newborn Care</option>
+                    <option>Post-Surgery Care</option>
+                    <option>Injection & Medication Administration</option>
+                </select>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-[140px_auto] gap-1 md:gap-4 md:items-center w-full justify-items-center md:justify-items-start">
+                <label for="date" class="text-blue-600 font-bold">Date:</label>
+                <input type="date" id="date" class="border border-gray-300 rounded-md w-96 h-10 px-3">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-[140px_auto] gap-1 md:gap-4 md:items-center w-full justify-items-center md:justify-items-start">
+                <label for="duration" class="text-blue-600 font-bold">Duration:</label>
+                <select id="duration" class="border border-gray-300 rounded-md p-2 w-96 h-10 bg-white appearance-none">
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="flex justify-center items-center pt-6">
+            <button id="bookbutton" type="submit" class="bg-blue-600 w-96 text-white rounded-md font-bold text-lg p-3 transition-all duration-700 ease-linear hover:bg-blue-200 hover:text-blue-950">Book Appointment Now!</button>
+        </div>
         </form>
 
     </div>
@@ -262,6 +315,20 @@
     backhome.addEventListener("click", function () {
         window.location.href = "main.html";
     });
+
+    //selecting sideNav and menu icon
+var sidenav = document.getElementById("sidenav")
+var menuicon = document.getElementById("menuicon")
+var closenav = document.getElementById("closenav")
+
+menuicon.addEventListener("click",function(){
+    sidenav.style.right=0
+})
+
+closenav.addEventListener("click",function(){
+    sidenav.style.right="-50%"
+
+})
 
 </script>
 
