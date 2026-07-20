@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Appointment form</title>
     <link rel="stylesheet" href="./src/output.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-        
-<body>
+</head>
+<body class="bg-slate-100 overflow-x-hidden">
     <div id="mainpage">
 <nav class="p-3 flex justify-between items-center bg-white shadow-sm sticky top-0 z-50">
     <div class="p-3">
@@ -27,65 +27,118 @@
         </p>
     </a>
 </div>
-    
+
 
     <ul class="gap-6 hidden md:flex" style="font-family: 'Inter', sans-serif;">
-        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./index.html">Home</a></li>
+        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./main.html">Home</a></li>
         <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./profile.html">Nearby Nurses</a></li>
-        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./appointment.html">Appointments</a></li>
-        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="#" onclick="moveToBottom()">Helpline</a></li>
+        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./index.html">Logout</a></li>
     </ul>
 
-    <svg data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" 
-         xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="28" height="28" 
+    <svg id="menuicon" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24"
+         xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="28" height="28"
          class="md:hidden text-slate-700 cursor-pointer">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
     </svg>
 </nav>
 
+<<<<<<< HEAD
+=======
+<!-- side nav -->
+  <section id="sidenav" class=" bg-white fixed z-20 top-25 transition-all duration-1000" style="width:50%; height:100vh; right:-50%;">
+        <div class="p-8 text-left">
+            <p id="closenav" class="text-slate-600 cursor-pointer">X</p>
+        </div>
+        <ul class="flex flex-col items-center gap-10 text-gray-500">
+         <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./main.html">Home</a></li>
+        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./profile.html">Nearby Nurses</a></li>
+        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./index.html">Logout</a></li>
+
+
+        </ul>
+    </section>
+>>>>>>> 69111589c79b85d96da4f0827c670457d4bb0666
 
 <!-- appointment form section  -->
-    <div id="form">
-        <h1 class="flex justify-center m-5 text-4xl font-bold text-blue-600">Information to fill for appointment</h1>
-        <form class="grid grid-cols-1 justify-center items-center">
-        <div class="flex flex-col justify-center items-center gap-3">
-            <div class="flex gap-2 items-center mb-3"><label for="patientname" class="text-blue-600 w-52 font-bold">Patient Name:</label><input type="text" id="patient-name" class="border border-gray-300 rounded-md w-80 h-10 pl-1" placeholder="Enter patient name"></div>
-            <div class="flex gap-2"><label for="patientage" class="text-blue-600 w-52 font-bold">Age:</label><input type="text" id="patient-age" class="border border-gray-300 w-80 border border-gray-300 rounded-md h-10 pl-1" placeholder="Enter age"></div>
-            <div class="flex gap-2"><label for="patientgender" class="text-blue-600 w-52 font-bold">Gender:</label><div class="w-40 flex"><input type="radio" name="gender" value="female"><p class="pl-1">Female</p></div><div class="w-40 flex"><input type="radio" name="gender" value="male"><p class="pl-1">Male</p></div></div>
-            <div class="flex gap-2"><label for="number" class="text-blue-600 w-52 font-bold">Phone Number:</label><input type="number" id="number" class="w-80 border border-gray-300 rounded-md h-10 pl-1" placeholder="Enter your number"></div>
-            <div class="flex gap-2"><label for="address" class="text-blue-600 w-52 font-bold">Home Address:</label><input type="text" id="address" class="w-80 border border-gray-300 rounded-md h-10 pl-1" placeholder="Enter address here."></div>
-            <div class="flex gap-2"><label for="reason" id="forreason" class="text-blue-600 w-52 font-bold">Reason for care:</label><textarea id="reasonmsg" class="w-80 h-40 border border-gray-300 rounded-md pl-1" placeholder="Type medical information.."></textarea></div>
-            <div class="flex gap-2"><label for="speciality" id="speciality" class="text-blue-600 w-52 font-bold">Preferred nurse speciality:</label>
-            <select class="border border-gray-300 rounded-md p-2 bg-white appearance-none w-80">
-                <option>General Care</option>
-                <option>Elderly Care</option>
-                <option>pediatric Care</option>
-                <option>Wound Care</option>
-                <option>Meternity & Newborn Care</option>
-                <option>Post-Surgery Care</option>
-                <option>Injection & Medication Administration</option>
-            </select>
+   <div id="form" class="p-4 sm:p-6">
+        <h1 class="flex justify-center m-5 text-2xl sm:text-4xl font-bold text-blue-600 text-center">Information to fill for appointment</h1>
+
+        <form class="w-full max-w-2xl mx-auto bg-white rounded-xl shadow-sm border border-gray-200 p-6 sm:p-8">
+        <div class="flex flex-col gap-4 items-center md:items-start">
+
+            <div class="grid grid-cols-1 md:grid-cols-[140px_auto] gap-1 md:gap-4 md:items-center w-full justify-items-center md:justify-items-start">
+                <label for="patient-name" class="text-blue-600 font-bold">Patient Name:</label>
+                <input type="text" id="patient-name" class="border border-gray-300 rounded-md w-96 h-10 px-3" placeholder="Enter patient name">
             </div>
-            <div class="flex gap-2"><label for="date" class="text-blue-600 w-52 font-bold">Date of Appointment:</label><input type="date" class="border border-gray-300 pl-1 rounded-md w-80 h-10"></div>
-            
-            <div class="flex gap-2"><label for="duration" class="text-blue-600 w-52 font-bold">Duration of Care:</label>
-            <select class="border border-gray-300 rounded-md p-2 w-80 bg-white appearance-none">
-                <option value="daily">Daily</option>
-                <option value="weekly">Weekly</option>
-                <option value="monthly">Monthly</option>
-            </select></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-[140px_auto] gap-1 md:gap-4 md:items-center w-full justify-items-center md:justify-items-start">
+                <label for="patient-age" class="text-blue-600 font-bold">Age:</label>
+                <input type="text" id="patient-age" class="border border-gray-300 rounded-md w-96 h-10 px-3" placeholder="Enter age">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-[140px_auto] gap-1 md:gap-4 md:items-center w-full justify-items-center md:justify-items-start">
+                <label class="text-blue-600 font-bold">Gender:</label>
+                <div class="flex gap-6">
+                    <div class="flex items-center gap-1"><input type="radio" name="gender" id="gender-female" value="female"><label for="gender-female" class="pl-1">Female</label></div>
+                    <div class="flex items-center gap-1"><input type="radio" name="gender" id="gender-male" value="male"><label for="gender-male" class="pl-1">Male</label></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-[140px_auto] gap-1 md:gap-4 md:items-center w-full justify-items-center md:justify-items-start">
+                <label for="number" class="text-blue-600 font-bold">Phone Number:</label>
+                <input type="tel" inputmode="numeric" maxlength="10" id="number" class="border border-gray-300 rounded-md w-96 h-10 px-3" placeholder="Enter your number">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-[140px_auto] gap-1 md:gap-4 md:items-center w-full justify-items-center md:justify-items-start">
+                <label for="address" class="text-blue-600 font-bold">Home Address:</label>
+                <input type="text" id="address" class="border border-gray-300 rounded-md w-96 h-10 px-3" placeholder="Enter address here.">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-[140px_auto] gap-1 md:gap-4 w-full justify-items-center md:justify-items-start">
+                <label for="reasonmsg" class="text-blue-600 font-bold">Reason for care:</label>
+                <textarea id="reasonmsg" class="border border-gray-300 rounded-md w-96 h-24 px-3 py-2" placeholder="Type medical information.."></textarea>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-[140px_auto] gap-1 md:gap-4 md:items-center w-full justify-items-center md:justify-items-start">
+                <label for="speciality" class="text-blue-600 font-bold">Speciality:</label>
+                <select id="speciality" class="border border-gray-300 rounded-md p-2 bg-white appearance-none w-96 h-10">
+                    <option>General Care</option>
+                    <option>Elderly Care</option>
+                    <option>Pediatric Care</option>
+                    <option>Wound Care</option>
+                    <option>Maternity & Newborn Care</option>
+                    <option>Post-Surgery Care</option>
+                    <option>Injection & Medication Administration</option>
+                </select>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-[140px_auto] gap-1 md:gap-4 md:items-center w-full justify-items-center md:justify-items-start">
+                <label for="date" class="text-blue-600 font-bold">Date:</label>
+                <input type="date" id="date" class="border border-gray-300 rounded-md w-96 h-10 px-3">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-[140px_auto] gap-1 md:gap-4 md:items-center w-full justify-items-center md:justify-items-start">
+                <label for="duration" class="text-blue-600 font-bold">Duration:</label>
+                <select id="duration" class="border border-gray-300 rounded-md p-2 w-96 h-10 bg-white appearance-none">
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+            </div>
+
         </div>
-        <div class="flex justify-center items-center mt-3">
-        <button id="bookbutton" type="submit" class="bg-blue-600 w-80 content-center text-white rounded-md font-bold text-xl p-3 transition-all duration-700 ease-linear hover:bg-blue-200 hover:text-blue-950">Book Appointment Now!</button></div>
+
+        <div class="flex justify-center items-center pt-6">
+            <button id="bookbutton" type="submit" class="bg-blue-600 w-96 text-white rounded-md font-bold text-lg p-3 transition-all duration-700 ease-linear hover:bg-blue-200 hover:text-blue-950">Book Appointment Now!</button>
+        </div>
         </form>
 
     </div>
-    
-    
+
 
 
     <!--footer section  -->
-<footer class="footer p-2 m-2 sticky bottom-0 bg-white z-50">
+<footer id="site-footer" class="footer p-2 m-2 mt-5 bottom-0 bg-white z-50">
     <div class="footer-container">
         <div class="row flex flex-wrap justify-between">
        <div class="footer-col w-[25%] p-2">
@@ -94,7 +147,7 @@
                 before:absolute
                 before:left-0
                 before:bottom-[-10px]
-                before:bg-blue-900 
+                before:bg-blue-900
                 before:h-1
                 before:w-[50px]">Company</h4>
                 <ul>
@@ -110,7 +163,7 @@
                 before:absolute
                 before:left-0
                 before:bottom-[-10px]
-                before:bg-blue-900 
+                before:bg-blue-900
                 before:h-1
                 before:w-[50px]">Services</h4>
                 <ul>
@@ -127,7 +180,7 @@
                 before:absolute
                 before:left-0
                 before:bottom-[-10px]
-                before:bg-blue-900 
+                before:bg-blue-900
                 before:h-1
                 before:w-[50px]">Quick Links</h4>
                 <ul>
@@ -144,10 +197,10 @@
                 before:absolute
                 before:left-0
                 before:bottom-[-10px]
-                before:bg-blue-900 
+                before:bg-blue-900
                 before:h-1
                 before:w-[50px]">Follow us</h4>
-                
+
                 <div class="social-links">
                     <a href="#" class="inline-block bg-blue-950 text-white rounded-[50%] h-[40px] w-[40px] mr-2.5 text-center mb-2.5 transition-all duration-1000 ease-in-out hover:bg-blue-200 hover:text-black"><i class="fab fa-linkedin-in pt-3"></i></a>
                     <a href="#" class="inline-block bg-blue-950 text-white rounded-[50%] h-[40px] w-[40px] mr-2.5 text-center mb-2.5 transition-all duration-1000 ease-in-out hover:bg-blue-200 hover:text-black"><i class="fab fa-instagram pt-3"></i></a>
@@ -156,7 +209,7 @@
 
                 </div>
             </div>
-            
+
         </div>
     </div>
 </footer>
@@ -170,170 +223,117 @@
         </h1>
 
         <p class="text-lg text-gray-600 mt-3">
-            Thank you for choosing NurseNear.We will contact you shortly.
+            Thank you for choosing NurseNear. We will contact you shortly.
         </p>
         <p id="backHome" class="mt-5 text-blue-600 cursor-pointer underline">Back to Home</p>
 
-    </div> 
+    </div>
 
 
 
 <script>
-//     let name=document.getElementById("patient-name")
-//     let age=document.getElementById("patient-age")
-//     let address=document.getElementById("address")
-//     let number=document.getElementById("number")
-//     let textmsg=document.getElementById("reasonmsg")
-//     let gender=document.getElementsByName("gender")
-//     let button=document.getElementById("sendbutton")
-
-//     let namepattern=/^[A-Za-z]+$/;
-//     let agepattern=/^d{1,3}$/;
-//     let addresspattern=/^[A-Za-z0-9\s,./-]+$/
-//     let numberpattern=/^d{10}$/;
-//     let textmsgpattern=/^[A-Za-z0-9-]+$/
-//     name.addEventListener("input",function(){
-//     if(namepattern.test(name.value)==false){
-//         alert("please enter name correctly without numbers.")
-//     } 
-//     })
-//     age.addEventListener("input",function(){
-//     if(agepattern.test(age.value)==false){
-//         alert("Enter correct age.")
-//     }
-//     })
-//     address.addEventListener("input",function(){
-//     if(addresspattern.test(address.value)==false){
-//         alert("Please enter correct address")
-//     }
-//     })
-//     number.addEventListener("input",function(){
-//     if(numberpattern.test(number.value)==false){
-//         alert("Please enter correct name")
-//     }
-//     })
-//     textmsg.addEventListener("input",function(){
-//     if(textmsgpattern.test(textmsg.value)==false){
-//         alert("enter name correct")
-//     }
-//     })
-//     sendbutton.addEventListener("click",function(){
-//         if(namepattern.test(name.value)==false){
-//             alert("please enter name correctly without numbers.")
-//     } 
-    
-
-//         if(agepattern.test(age.value)==false){
-//             alert("Enter correct age.")
-//     }
-    
-    
-//         if(addresspattern.test(address.value)==false){
-//             alert("Please enter correct address")
-//     }
-    
-    
-//     if(numberpattern.test(number.value)==false){
-//         alert("Please enter correct name")
-//     }
-    
-
-//     if(textmsgpattern.test(textmsg.value)==false){
-//         alert(enter name correct)
-//     }
-// })
-
-
     let name = document.getElementById("patient-name");
-let age = document.getElementById("patient-age");
-let address = document.getElementById("address");
-let number = document.getElementById("number");
+    let age = document.getElementById("patient-age");
+    let address = document.getElementById("address");
+    let number = document.getElementById("number");
 
-let textmsg = document.getElementById("reasonmsg");
-let button = document.getElementById("bookbutton");
-
-
-let namepattern = /^[A-Za-z\s]+$/;
-let agepattern = /^\d{1,3}$/;
-let addresspattern = /^[A-Za-z0-9\s,./-]+$/;
-let numberpattern = /^\d{10}$/;
-let textmsgpattern = /^[A-Za-z0-9\s,.-]+$/;
-
-let submitmsg=document.getElementById("submitmsg")
-let form=document.getElementById("form")
-
-let mainpage=document.getElementById("mainpage")
-let backhome=document.getElementById("backHome")
+    let textmsg = document.getElementById("reasonmsg");
+    let button = document.getElementById("bookbutton");
 
 
-button.addEventListener("click", function (e) {
-    e.preventDefault();
-    let gender=document.querySelector('input[name="gender"]:checked')
+    let namepattern = /^[A-Za-z\s]+$/;
+    let agepattern = /^\d{1,3}$/;
+    let addresspattern = /^[A-Za-z0-9\s,./-]+$/;
+    let numberpattern = /^\d{10}$/;
+    let textmsgpattern = /^[A-Za-z0-9\s,.-]+$/;
 
-    let formPromise = new Promise(function (resolve, reject) {
-        if(name.value.trim()===""){
-            reject("Please enter name")
-        }
-        else if (!namepattern.test(name.value)) {
-            reject("Please enter a valid name.");
-        } 
-        else if(age.value.trim()===""){
-            reject("Please enter age")
-        }
-        else if (!agepattern.test(age.value)) {
-            reject("Please enter a valid age.");
-        } 
-        else if(!gender){
-            reject("Please select gender")
-        }
-        else if(address.value.trim()==="")
-        {
-            reject("Please enter number")
-        }
-        else if (!addresspattern.test(address.value)) {
-            reject("Please enter a valid address.");
-        } 
-        else if(number.value.trim()==="")
-        {
-            reject("Please enter number")
-        }
-        else if (!numberpattern.test(number.value)) {
-            reject("Please enter a valid 10-digit phone number.");
-        } 
-        else if(textmsg.value.trim()===""){
-            reject("Please enter patient's condition")
-        }
-        else if (!textmsgpattern.test(textmsg.value)) {
-            reject("Please enter a valid reason for care.");
-        } 
-        else {
-            resolve("Appointment booked successfully!");
-        }
+    let submitmsg = document.getElementById("submitmsg");
+    let form = document.getElementById("form");
+
+    let mainpage = document.getElementById("mainpage");
+    let backhome = document.getElementById("backHome");
+
+    // scroll to the footer/helpline section - was previously called but never defined
+    function moveToBottom() {
+        document.getElementById("site-footer").scrollIntoView({ behavior: "smooth" });
+    }
+
+    button.addEventListener("click", function (e) {
+        e.preventDefault();
+        let gender = document.querySelector('input[name="gender"]:checked');
+
+        let formPromise = new Promise(function (resolve, reject) {
+            if (name.value.trim() === "") {
+                reject("Please enter name");
+            }
+            else if (!namepattern.test(name.value)) {
+                reject("Please enter a valid name.");
+            }
+            else if (age.value.trim() === "") {
+                reject("Please enter age");
+            }
+            else if (!agepattern.test(age.value)) {
+                reject("Please enter a valid age.");
+            }
+            else if (!gender) {
+                reject("Please select gender");
+            }
+            else if (address.value.trim() === "") {
+                reject("Please enter address");
+            }
+            else if (!addresspattern.test(address.value)) {
+                reject("Please enter a valid address.");
+            }
+            else if (number.value.trim() === "") {
+                reject("Please enter number");
+            }
+            else if (!numberpattern.test(number.value)) {
+                reject("Please enter a valid 10-digit phone number.");
+            }
+            else if (textmsg.value.trim() === "") {
+                reject("Please enter patient's condition");
+            }
+            else if (!textmsgpattern.test(textmsg.value)) {
+                reject("Please enter a valid reason for care.");
+            }
+            else {
+                resolve("Appointment booked successfully!");
+            }
+        });
+
+        formPromise
+            .then(function (message) {
+                alert(message);
+                mainpage.classList.add("hidden");
+                submitmsg.classList.remove("hidden");
+                submitmsg.classList.add("flex");
+            })
+            .catch(function (error) {
+                alert(error);
+            });
     });
 
-    formPromise
-        .then(function (message) {
-            alert(message);
-            mainpage.classList.add("hidden");
-            submitmsg.classList.remove("hidden");
-            submitmsg.classList.add("flex")
 
-        })
-        .catch(function (error) {
-            alert(error);
-        });
-});
+    // for back to home
+    backhome.addEventListener("click", function () {
+        window.location.href = "main.html";
+    });
 
+    //selecting sideNav and menu icon
+var sidenav = document.getElementById("sidenav")
+var menuicon = document.getElementById("menuicon")
+var closenav = document.getElementById("closenav")
 
-//for back to home
-
-backhome.addEventListener("click",function(){
-    window.location.href="index.html";
+menuicon.addEventListener("click",function(){
+    sidenav.style.right=0
 })
-    
-    
+
+closenav.addEventListener("click",function(){
+    sidenav.style.right="-50%"
+
+})
 
 </script>
-    
+
 </body>
 </html>
