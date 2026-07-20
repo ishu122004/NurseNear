@@ -9,11 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
         
-<body>
+<body class="bg-slate-100">
     
 <nav class="p-3 flex justify-between items-center bg-white shadow-sm sticky top-0 z-50">
     <div class="p-3">
-    <a href="index.html" class="inline-block">
+    <a href="main.html" class="inline-block">
         <div class="flex items-center">
             <h1 class="cursor-pointer font-bold text-5xl text-blue-600 leading-none md:text-7xl" style="font-family: 'Poppins', sans-serif;">
                 N
@@ -31,12 +31,14 @@
 
     <ul class="gap-6 hidden md:flex" style="font-family: 'Inter', sans-serif;">
 
-        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./index.html">Home</a></li>
+        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./main.html">Home</a></li>
         <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./profile.html">Nearby Nurses</a></li>
         <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./search.html">Search by filter</a></li>
 
         <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./appointment.html">Appointments</a></li>
         <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="#" onclick="moveToBottom()">Helpline</a></li>
+                <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./index.html">Logout</a></li>
+
 
         
 
@@ -50,7 +52,7 @@
 </nav>
 
 <!-- side nav -->
-  <section id="sidenav" class=" bg-white fixed z-20 top-10 transition-all duration-1000" style="width:50%; height:100vh; right:-50%;">
+  <section id="sidenav" class=" bg-white fixed z-20 top-25 transition-all duration-1000" style="width:50%; height:100vh; right:-50%;">
         <div class="p-8 text-left">
             <p id="closenav" class="text-slate-600 cursor-pointer">X</p>
         </div>
@@ -193,16 +195,17 @@
 </div>
 
 <!-- Review section  -->
- <div class="review-scroll flex flex-nowrap m-3 gap-7 w-full overflow-x-auto">
-    <div class="min-w-[300px] p-5 shadow-md flex flex-col"><p class="content center">The booking process was quick and simple. The nurse was professional, caring, and arrived on time. Highly recommended</p><h1 class="text-blue-600 font-semibold mt-auto">Priya S</h1></div>
-    <div class="min-w-[300px] p-5 shadow-md flex flex-col"><p class="content-center">Excellent service! The nurse provided outstanding care for my father during his recovery. Very satisfied.</p><h1 class="text-blue-600 font-semibold mt-auto">Rahul K</h1></div>
-    <div class="min-w-[300px] p-5 shadow-md flex flex-col"><p class="content-center">Friendly and experienced staff. The entire experience was smooth, and customer support was very helpful.</p><h1 class="text-blue-600 font-semibold mt-auto">Anita M</h1></div>
-    <div class="min-w-[300px] p-5 shadow-md flex flex-col"><p class="content-center">Reliable healthcare service with qualified nurses. I will definitely use this platform again.</p><h1 class="text-blue-600 font-semibold mt-auto">Arun V</h1></div>
-    <div class="min-w-[300px] p-5 shadow-md flex flex-col"><p class="content-center">Finding a home nurse was easy. The caregiver was compassionate, skilled, and punctual.</p><h1 class="text-blue-600 font-semibold mt-auto">Rahul J</h1></div>
-    <div class="min-w-[300px] p-5 shadow-md flex flex-col"><p class="content-center">Great experience from booking to service. The nurse explained everything clearly and provided excellent care.</p><h1 class="text-blue-600 font-semibold mt-auto">Shreya A</h1></div>
+ <!-- Review section  -->
+ <div class="review-scroll flex flex-nowrap my-3 px-2 gap-4 w-full overflow-x-auto bg-blue-50 p-5 rounded-md">
+    <div class="min-w-[300px] p-5 shadow-md bg-white rounded-md flex flex-col"><p class="text-center">The booking process was quick and simple. The nurse was professional, caring, and arrived on time. Highly recommended</p><p class="text-blue-600 font-semibold mt-auto">Priya S</p></div>
+    <div class="min-w-[300px] p-5 shadow-md bg-white rounded-md flex flex-col"><p class="text-center">Excellent service! The nurse provided outstanding care for my father during his recovery. Very satisfied.</p><p class="text-blue-600 font-semibold mt-auto">Rahul K</p></div>
+    <div class="min-w-[300px] p-5 shadow-md bg-white rounded-md flex flex-col"><p class="text-center">Friendly and experienced staff. The entire experience was smooth, and customer support was very helpful.</p><p class="text-blue-600 font-semibold mt-auto">Anita M</p></div>
+    <div class="min-w-[300px] p-5 shadow-md bg-white rounded-md flex flex-col"><p class="text-center">Reliable healthcare service with qualified nurses. I will definitely use this platform again.</p><p class="text-blue-600 font-semibold mt-auto">Arun V</p></div>
+    <div class="min-w-[300px] p-5 shadow-md bg-white rounded-md flex flex-col"><p class="text-center">Finding a home nurse was easy. The caregiver was compassionate, skilled, and punctual.</p><p class="text-blue-600 font-semibold mt-auto">Rahul J</p></div>
+    <div class="min-w-[300px] p-5 shadow-md bg-white rounded-md flex flex-col shrink-0 mr-3"><p class="text-center">Great experience from booking to service. The nurse explained everything clearly and provided excellent care.</p><p class="text-blue-600 font-semibold mt-auto">Shreya A</p></div>
  </div>
  <!-- help line section  -->
-  <div id="bottom-helpline" class="w-full flex flex-col gap-2 justify-center items-center">
+  <div id="bottom-helpline" class="w-full flex flex-col gap-2 justify-center items-center mt-5 mb-5">
     <h1 class="font-bold text-3xl text-red-500">Helpline</h1>
     <p>+91 1800 652 7895</p>
   </div>
@@ -210,7 +213,7 @@
 
 
 <!-- Footer section  -->
-<footer class="footer p-2 m-2 bg-white sticky bottom-0 z-50">
+<footer class="footer p-2 m-2 bg-white bottom-0 z-50">
 
     <div class="footer-container">
         <div class="row flex flex-wrap justify-between">

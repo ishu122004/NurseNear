@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Main</title>
     <link rel="stylesheet" href="./src/output.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap"
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
-<body>
+<body class="bg-slate-100">
 
     <nav class="p-3 flex justify-between items-center bg-white shadow-sm sticky top-0 z-50">
         <div class="p-3">
@@ -35,10 +35,11 @@
 
 
        <ul class="gap-6 hidden md:flex" style="font-family: 'Inter', sans-serif;">
-        <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./main.html">Home</a></li>
-
+        
           <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="#" onclick="moveToBottom()">Helpline</a></li>
-    </ul>
+                    <li class="cursor-pointer text-slate-600 hover:text-blue-600 font-medium transition-colors"><a href="./index.html">Logout</a></li>
+
+        </ul>
     </nav>
 
 
@@ -124,7 +125,7 @@
 
 
     <!-- Footer section  -->
-    <footer class="footer p-2 mt-10 bg-blue-50 sticky bottom-0-0 z-50">
+    <footer class="footer p-2 mt-10 bg-blue-50">
         <div class="footer-container">
             <div class="row flex flex-wrap justify-between">
                 <div class="footer-col w-[25%] p-2">
